@@ -41,7 +41,7 @@ augroup vim-zig
     autocmd BufWritePre <buffer> if get(g:, 'zig_fmt_autosave', 1) | call zig#fmt#Format() | endif
 augroup END
 
-let b:undo_ftplugin .= '|au! vim-zig BufWritePre <buffer>'
+let b:undo_ftplugin .= '|exe''au! vim-zig * <buffer>'''
 
 let &cpo = s:cpo_orig
 unlet s:cpo_orig
