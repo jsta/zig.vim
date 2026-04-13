@@ -17,7 +17,7 @@ endif
 " Match Zig builtin fns
 setlocal iskeyword+=@-@
 
-" Recomended code style, no tabs and 4-space indentation
+" Recommended code style, no tabs and 4-space indentation
 if get(g:, 'zig_recommended_style', 1)
     setlocal expandtab
     setlocal softtabstop=4
