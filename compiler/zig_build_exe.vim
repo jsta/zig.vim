@@ -10,11 +10,6 @@ let current_compiler = 'zig_build_exe'
 let s:save_cpo = &cpo
 set cpo&vim
 
-
-if exists(':CompilerSet') != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
-
 if has('patch-7.4.191')
   CompilerSet makeprg=zig\ build-exe\ \%:S\ \$* 
 else
