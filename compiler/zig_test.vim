@@ -10,11 +10,7 @@ let current_compiler = 'zig_test'
 let s:save_cpo = &cpo
 set cpo&vim
 
-if has('patch-7.4.191')
-  CompilerSet makeprg=zig\ test\ \%:S\ \$* 
-else
-  CompilerSet makeprg=zig\ test\ \"%\"\ \$* 
-endif
+CompilerSet makeprg=zig\ test\ \%:S\ \$*
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
