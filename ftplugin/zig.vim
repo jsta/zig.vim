@@ -16,25 +16,24 @@ endif
 
 " Match Zig builtin fns
 setlocal iskeyword+=@-@
+setlocal formatoptions-=t formatoptions+=croql
+setlocal suffixesadd=.zig,.zon
+
+let b:undo_ftplugin = 'setl isk< fo< sua<'
 
 " Recommended code style, no tabs and 4-space indentation
 if get(g:, 'zig_recommended_style', 1)
     setlocal expandtab
     setlocal softtabstop=4
     setlocal shiftwidth=4
+    let b:undo_ftplugin .= 'setl et< sts< sw<'
 endif
-
-setlocal formatoptions-=t formatoptions+=croql
-
-setlocal suffixesadd=.zig,.zon
 
 if has('comments')
     setlocal comments=:///,://!,://
     setlocal commentstring=//\ %s
+    let b:undo_ftplugin .= 'setl com< cms<'
 endif
-
-let b:undo_ftplugin =
-    \ 'setl isk< et< ts< sts< sw< fo< sua< mp< com< cms< inex< inc< pa<'
 
 augroup vim-zig
     autocmd! BufWritePre <buffer>
