@@ -8,7 +8,7 @@ function! zig#fmt#Format() abort
   " Save cursor position and many other things.
   let view = winsaveview()
 
-  if !executable('zig')
+  if !executable('zig') || fnamemodify(exepath("zig"), ":p:h") == getcwd()
     echohl Error | echomsg "no zig binary found in PATH" | echohl None
     return
   endif
