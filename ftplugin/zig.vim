@@ -26,13 +26,13 @@ if get(g:, 'zig_recommended_style', 1)
     setlocal expandtab
     setlocal softtabstop=4
     setlocal shiftwidth=4
-    let b:undo_ftplugin .= 'setl et< sts< sw<'
+    let b:undo_ftplugin .= ' et< sts< sw<'
 endif
 
 if has('comments')
     setlocal comments=:///,://!,://
     setlocal commentstring=//\ %s
-    let b:undo_ftplugin .= 'setl com< cms<'
+    let b:undo_ftplugin .= ' com< cms<'
 endif
 
 augroup vim-zig
