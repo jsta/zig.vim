@@ -10,7 +10,7 @@ let current_compiler = 'zig_run'
 let s:save_cpo = &cpo
 set cpo&vim
 
-CompilerSet makeprg=zig\ run\ \%:S\ \$*
+CompilerSet makeprg=zig\ run\ %:S\ $*
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
