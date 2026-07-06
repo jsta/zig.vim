@@ -56,7 +56,7 @@ syntax region zigMultilineString matchgroup=zigMultilineStringDelimiter start="c
 
 syntax keyword zigTodo contained TODO
 
-syntax region zigString matchgroup=zigStringDelimiter start=+c\?"+ skip=+\\\\\|\\"+ end=+"+ oneline contains=zigEscape,zigEscapeError,@Spell
+syntax region zigString matchgroup=zigStringDelimiter start=+c\?"+ skip=+\\\\\|\\"+ end=+"+ end=+$+ contains=zigEscape,zigEscapeError,@Spell
 syntax match zigEscapeError   display contained /\\./
 syntax match zigEscape        display contained /\\\([nrt\\'"]\|x\x\{2}\|u{\x\+}\)/
 
