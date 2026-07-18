@@ -13,7 +13,7 @@ function! zig#fmt#Format() abort
     return
   endif
 
-  let cmdline = 'zig fmt --stdin --ast-check'
+  let cmdline = 'zig master fmt --stdin --ast-check'
   if expand('%:e') is? 'zon'
     let cmdline = cmdline . ' --zon'
   endif
